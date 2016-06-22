@@ -13,11 +13,22 @@
 ---
 
 ## <a name="name">命名</a>
-- 规范1
-    描述1
-- 规范2
-    描述2
+- 规范1。
+    ```javascript
+    // bad
+    // 反例
 
+    // good
+    // 推荐
+    ```
+- 规范2。
+    ```javascript
+    // bad
+    // 反例
+
+    // good
+    // 推荐
+    ```
 ## <a name="declaration">声明</a>
 ## <a name="arguments">参数</a>
 ## <a name="judge">判断</a>
