@@ -10,6 +10,7 @@
   1. [取值](#get)
   1. [类型检测](#typeCheck)
   1. [代码风格](#style)
+  
 ---
 
 ## <a name="name">命名</a>
