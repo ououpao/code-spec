@@ -22,44 +22,44 @@ sublime注释工具: [DocBlockr](https://github.com/Warin/Sublime/tree/master/Do
 
 ## <a name="name">命名</a>
 - 常规变量命名为驼峰式命名。
-```javascript
-// bad 
-var citytext = '北京';
-var is_number = false;
-var has_selectCity = true; 
+    ```javascript
+    // bad 
+    var citytext = '北京';
+    var is_number = false;
+    var has_selectCity = true; 
 
-// good
-var cityText = '北京';
-var isNumber = false;
-var hasSelectCity = true;
-```
+    // good
+    var cityText = '北京';
+    var isNumber = false;
+    var hasSelectCity = true;
+    ```
 - 使用同义词替换需要使用的保留字。
-```javascript
-// bad
-var superman = {
-  class: 'alien'
-};
-var superman = {
-  klass: 'alien'
-};
+    ```javascript
+    // bad
+    var superman = {
+      class: 'alien'
+    };
+    var superman = {
+      klass: 'alien'
+    };
 
-// good
-var superman = {
-  type: 'alien'
-};
-```
+    // good
+    var superman = {
+      type: 'alien'
+    };
+    ```
 - 避免单字母命名。命名应具备描述性。
-```javascript
-// bad
-function q() {
-  // ...stuff...
-}
+    ```javascript
+    // bad
+    function q() {
+      // ...stuff...
+    }
 
-// good
-function query() {
-  // ..stuff..
-}
-```
+    // good
+    function query() {
+      // ..stuff..
+    }
+    ```
 - 构造函数首字母大写。
     ```javascript
     // bad 
@@ -75,33 +75,33 @@ function query() {
     
     ```
 - 使用下划线 _ 开头命名私有属性。
-```javascript
-// bad
-this.__firstName__ = 'Panda';
-this.firstName_ = 'Panda';
+    ```javascript
+    // bad
+    this.__firstName__ = 'Panda';
+    this.firstName_ = 'Panda';
 
-// good
-this._firstName = 'Panda';
-```
+    // good
+    this._firstName = 'Panda';
+    ```
 - 使用`_this`来缓存当前作用域内`this`的引用。
-```javascript
-// bad 
-function test() {
-    var that = this;
-    // var self = this;
-    return function() {
-        console.log(that)
+    ```javascript
+    // bad 
+    function test() {
+        var that = this;
+        // var self = this;
+        return function() {
+            console.log(that)
+        }
     }
-}
 
-// good
-function test() {
-    var _this = this;
-    return function() {
-        console.log(_this)
+    // good
+    function test() {
+        var _this = this;
+        return function() {
+            console.log(_this)
+        }
     }
-}
-```
+    ```
 - `Boolean`类型的变量或属性以`is`/`has`开头。
     ```javascript
 
@@ -117,32 +117,32 @@ function test() {
 
     ```
 - 如果变量是`jquery`对象，变量名以`$`开头。
-```javascript
-// bad
-var target = $('#target');
-// good
-var $target = $('#target');
-```
+    ```javascript
+    // bad
+    var target = $('#target');
+    // good
+    var $target = $('#target');
+    ```
 
 **[⬆ 回到顶部](#contents)**
 
 ## <a name="init">初始化</a>
 - 使用`{}`初始化对象字面量
-```javascript
-// bad
-var obj = new Object();
+    ```javascript
+    // bad
+    var obj = new Object();
 
-// good
-var obj = {};
-```
-- 使用`[]`初始化数组
-```javascript
-// bad
-var obj = new Array();
+    // good
+    var obj = {};
+    ```
+    - 使用`[]`初始化数组
+    ```javascript
+    // bad
+    var obj = new Array();
 
-// good
-var obj = [];
-```
+    // good
+    var obj = [];
+    ```
 
 **[⬆ 回到顶部](#contents)**
 
@@ -235,31 +235,28 @@ var obj = [];
     };
     ```
 - 如果你需要存取函数时使用 `get`和 `set` 作为函数名前缀。
-```javascript
-// bad
-dragon.age();
+    ```javascript
+    // bad
+    dragon.age();
+    dragon.ageGet();
+    dragon.ageSet();
 
-// good
-dragon.getAge();
-
-// bad
-dragon.age(25);
-
-// good
-dragon.setAge(25);
-```
+    // good
+    dragon.getAge();
+    dragon.setAge(25);
+    ```
 - 如果属性是布尔值，使用 `is` 或 `has` 作为函数名的前缀。
-```javascript
-// bad
-if (!dragon.age()) {
-  return false;
-}
+    ```javascript
+    // bad
+    if (!dragon.age()) {
+      return false;
+    }
 
-// good
-if (!dragon.hasAge()) {
-  return false;
-}
-```
+    // good
+    if (!dragon.hasAge()) {
+      return false;
+    }
+    ```
 
 **[⬆ 回到顶部](#contents)**
 
@@ -360,303 +357,303 @@ if (!dragon.hasAge()) {
 
 ## <a name="prop">属性访问</a>
 - 使用 . 来访问对象的属性。
-```javascript
-var luke = {
-  jedi: true,
-  age: 28
-};
+    ```javascript
+    var luke = {
+      jedi: true,
+      age: 28
+    };
 
-// bad
-var isJedi = luke['jedi'];
+    // bad
+    var isJedi = luke['jedi'];
 
-// good
-var isJedi = luke.jedi;
-```
+    // good
+    var isJedi = luke.jedi;
+    ```
 - 当通过变量访问属性时使用中括号 []。
-```javascript
-var luke = {
-  jedi: true,
-  age: 28
-};
+    ```javascript
+    var luke = {
+      jedi: true,
+      age: 28
+    };
 
-function getProp(prop) {
-  return luke[prop];
-}
+    function getProp(prop) {
+      return luke[prop];
+    }
 
-var isJedi = getProp('jedi');
-```
+    var isJedi = getProp('jedi');
+    ```
 
 **[⬆ 回到顶部](#contents)**
 
 ## <a name="comment">注释</a>
 
-```javascript
-/**
- * [testFunction description]
- * @param  {[type]} a [description]
- * @param  {[type]} b [description]
- * @param  {[type]} c [description]
- * @return {[type]}   [description]
- */
-function testFunction(a, b, c) {
-}
-```
+    ```javascript
+    /**
+     * [testFunction description]
+     * @param  {[type]} a [description]
+     * @param  {[type]} b [description]
+     * @param  {[type]} c [description]
+     * @return {[type]}   [description]
+     */
+    function testFunction(a, b, c) {
+    }
+    ```
 
 **[⬆ 回到顶部](#contents)**
 
 ## <a name="style">代码风格</a>
 - 使用4格`tab`缩进。
-```javascript
-// bad
-function test() {
-  var name = 'naraku';
-  switch(name){
-    case 'haha':
-      console.log(name);
-      break;
-  }
-};
-// good
-function test() {
-    var name = 'naraku';
-    switch(name){
+    ```javascript
+    // bad
+    function test() {
+      var name = 'naraku';
+      switch(name){
         case 'haha':
-        console.log(name);
-        break;
-    }
-};
-```
+          console.log(name);
+          break;
+      }
+    };
+    // good
+    function test() {
+        var name = 'naraku';
+        switch(name){
+            case 'haha':
+            console.log(name);
+            break;
+        }
+    };
+    ```
 - 使用单引号` '' `包裹字符串。
-```javascript
-// bad
-var name = "Bob Parr";
-var fullName = "Bob " + this.lastName;
+    ```javascript
+    // bad
+    var name = "Bob Parr";
+    var fullName = "Bob " + this.lastName;
 
-// good
-var name = 'Bob Parr';
-var fullName = 'Bob ' + this.lastName;
-```
+    // good
+    var name = 'Bob Parr';
+    var fullName = 'Bob ' + this.lastName;
+    ```
 - 使用 `var` 声明每一个变量。
-```javascript
-// bad
-var items = getItems(),
-    goSportsTeam = true,
-    dragonball = 'z';
+    ```javascript
+    // bad
+    var items = getItems(),
+        goSportsTeam = true,
+        dragonball = 'z';
 
-// bad
-// （跟上面的代码比较一下，看看哪里错了）
-var items = getItems(),
-    goSportsTeam = true;
-    dragonball = 'z';
+    // bad
+    // （跟上面的代码比较一下，看看哪里错了）
+    var items = getItems(),
+        goSportsTeam = true;
+        dragonball = 'z';
 
-// good
-var items = getItems();
-var goSportsTeam = true;
-var dragonball = 'z';
-```
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball = 'z';
+    ```
 - 最后再声明未赋值的变量。当你需要引用前面的变量赋值时这将变的很有用。
-```javascript
-// bad
-var i, len, dragonball,
-    items = getItems(),
-    goSportsTeam = true;
+    ```javascript
+    // bad
+    var i, len, dragonball,
+        items = getItems(),
+        goSportsTeam = true;
 
-// bad
-var i;
-var items = getItems();
-var dragonball;
-var goSportsTeam = true;
-var len;
+    // bad
+    var i;
+    var items = getItems();
+    var dragonball;
+    var goSportsTeam = true;
+    var len;
 
-// good
-var items = getItems();
-var goSportsTeam = true;
-var dragonball;
-var length;
-var i;
-```
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball;
+    var length;
+    var i;
+    ```
 - 使用大括号包裹所有的多行代码块。
-```javascript
-// bad
-if (test)
-  return false;
+    ```javascript
+    // bad
+    if (test)
+      return false;
 
-// good
-if (test) return false;
+    // good
+    if (test) return false;
 
-// good
-if (test) {
-  return false;
-}
+    // good
+    if (test) {
+      return false;
+    }
 
-// bad
-function () { return false; }
+    // bad
+    function () { return false; }
 
-// good
-function () {
-  return false;
-}
-```
+    // good
+    function () {
+      return false;
+    }
+    ```
 - 把 else 放在 if 代码块关闭括号的同一行。
-```javascript
-// bad
-if (test) {
-  thing1();
-  thing2();
-}
-else {
-  thing3();
-}
+    ```javascript
+    // bad
+    if (test) {
+      thing1();
+      thing2();
+    }
+    else {
+      thing3();
+    }
 
-// good
-if (test) {
-  thing1();
-  thing2();
-} else {
-  thing3();
-}
-```
+    // good
+    if (test) {
+      thing1();
+      thing2();
+    } else {
+      thing3();
+    }
+    ```
 - 在大括号前放一个空格。
-```javascript
-// bad
-function test(){
-  console.log('test');
-}
+    ```javascript
+    // bad
+    function test(){
+      console.log('test');
+    }
 
-// good
-function test() {
-  console.log('test');
-}
+    // good
+    function test() {
+      console.log('test');
+    }
 
-// bad
-dog.set('attr',{
-  age: '1 year',
-  breed: 'Bernese Mountain Dog'
-});
+    // bad
+    dog.set('attr',{
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
 
-// good
-dog.set('attr', {
-  age: '1 year',
-  breed: 'Bernese Mountain Dog'
-});
-```
+    // good
+    dog.set('attr', {
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
+    ```
 - 在控制语句（if、while 等）的小括号前放一个空格。在函数调用及声明中，不在函数的参数列表前加空格。
-```javascript
-// bad
-if(isJedi) {
-  fight ();
-}
+    ```javascript
+    // bad
+    if(isJedi) {
+      fight ();
+    }
 
-// good
-if (isJedi) {
-  fight();
-}
+    // good
+    if (isJedi) {
+      fight();
+    }
 
-// bad
-function fight () {
-  console.log ('Swooosh!');
-}
+    // bad
+    function fight () {
+      console.log ('Swooosh!');
+    }
 
-// good
-function fight() {
-  console.log('Swooosh!');
-}
-```
+    // good
+    function fight() {
+      console.log('Swooosh!');
+    }
+    ```
 - 使用空格把运算符隔开。
-```javascript
-// bad
-var x=y+5;
-var result=isOk?'ok':'no';
+    ```javascript
+    // bad
+    var x=y+5;
+    var result=isOk?'ok':'no';
 
-// good
-var x = y + 5;
-var result = isOk ? 'ok' : 'no';
-```
+    // good
+    var x = y + 5;
+    var result = isOk ? 'ok' : 'no';
+    ```
 - 自增/自减运算符不需要隔开。
-```javascript
-// bad
-var x = y ++;
+    ```javascript
+    // bad
+    var x = y ++;
 
-// good
-var x = y++;
-```
+    // good
+    var x = y++;
+    ```
 - 使用三元运算符时，保证他们在同一行或者`?`,`:`单独一行不分开。
-```javascript
-// bad
-var location = env.development ?
-  'localhost' :
-  'www.api.com';
+    ```javascript
+    // bad
+    var location = env.development ?
+      'localhost' :
+      'www.api.com';
 
-// good
-var location = env.development ? 'localhost' : 'www.api.com'
+    // good
+    var location = env.development ? 'localhost' : 'www.api.com'
 
-var location = env.development
-  ? 'localhost'
-  : 'www.api.com';
+    var location = env.development
+      ? 'localhost'
+      : 'www.api.com';
 
-```
+    ```
 - 使用行尾逗号。
-```javascript
-// bad
-var story = [
-    once
-  , upon
-  , aTime
-];
+    ```javascript
+    // bad
+    var story = [
+        once
+      , upon
+      , aTime
+    ];
 
-// good
-var story = [
-  once,
-  upon,
-  aTime
-];
+    // good
+    var story = [
+      once,
+      upon,
+      aTime
+    ];
 
-// bad
-var hero = {
-    firstName: 'Bob'
-  , lastName: 'Parr'
-  , heroName: 'Mr. Incredible'
-  , superPower: 'strength'
-};
+    // bad
+    var hero = {
+        firstName: 'Bob'
+      , lastName: 'Parr'
+      , heroName: 'Mr. Incredible'
+      , superPower: 'strength'
+    };
 
-// good
-var hero = {
-  firstName: 'Bob',
-  lastName: 'Parr',
-  heroName: 'Mr. Incredible',
-  superPower: 'strength'
-};
-```
+    // good
+    var hero = {
+      firstName: 'Bob',
+      lastName: 'Parr',
+      heroName: 'Mr. Incredible',
+      superPower: 'strength'
+    };
+    ```
 - 去除额外的尾部逗号。
-```javascript
-// bad
-var hero = {
-  firstName: 'Bob',
-  lastName: 'Parr',
-  heroName: 'Mr. Incredible',
-  superPower: 'strength',
-};
-var arry = ['a', 'b', 'c',]
-// good
-var hero = {
-  firstName: 'Bob',
-  lastName: 'Parr',
-  heroName: 'Mr. Incredible',
-  superPower: 'strength'
-};
-var arry = ['a', 'b', 'c']
-```
+    ```javascript
+    // bad
+    var hero = {
+      firstName: 'Bob',
+      lastName: 'Parr',
+      heroName: 'Mr. Incredible',
+      superPower: 'strength',
+    };
+    var arry = ['a', 'b', 'c',]
+    // good
+    var hero = {
+      firstName: 'Bob',
+      lastName: 'Parr',
+      heroName: 'Mr. Incredible',
+      superPower: 'strength'
+    };
+    var arry = ['a', 'b', 'c']
+    ```
 - 在每一个语句后使用分号。
-```javascript
-// bad
-(function () {
-  var name = 'Skywalker'
-  return name
-})()
+    ```javascript
+    // bad
+    (function () {
+      var name = 'Skywalker'
+      return name
+    })()
 
-// good
-(function () {
-  var name = 'Skywalker';
-  return name;
-})();
-```
+    // good
+    (function () {
+      var name = 'Skywalker';
+      return name;
+    })();
+    ```
