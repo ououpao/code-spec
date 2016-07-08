@@ -386,7 +386,7 @@ sublime注释工具: [DocBlockr](https://github.com/Warin/Sublime/tree/master/Do
 **[⬆ 回到顶部](#contents)**
 
 ## <a name="comment">注释</a>
-
+- 函数描述注释。
     ```javascript
     /**
      * [testFunction description]
@@ -397,6 +397,33 @@ sublime注释工具: [DocBlockr](https://github.com/Warin/Sublime/tree/master/Do
      */
     function testFunction(a, b, c) {
     }
+    ```
+- 单行注释。
+    ```javascript
+    //bad 
+    /* 初始化项目 */
+    function init() {...}
+    //初始化项目
+    function init() {...}
+
+    // good
+    // 初始化项目
+    function init() {...}
+    ```
+- 多行注释。
+    ```javascript
+    //bad 
+    function init() {...}
+    // 初始化项目
+    // 并获取数据
+    function init() {...}
+
+    // good
+    /* 
+      初始化项目 
+      并获取数据
+    */
+    function init() {...}
     ```
 
 **[⬆ 回到顶部](#contents)**
