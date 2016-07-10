@@ -652,6 +652,7 @@ sublime注释工具: [DocBlockr](https://github.com/Warin/Sublime/tree/master/Do
     };
     ```
 - 去除额外的尾部逗号。
+    
     ```javascript
     // bad
     var hero = {
