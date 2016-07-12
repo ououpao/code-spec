@@ -1,9 +1,10 @@
 # CSS编码规范
-1. [第二部分：命名规范 ](#first)
-1. [第一部分：编码规范](#second)
+1. [第一部分：命名规范 ](#first)
+1. [第二部分：编码规范](#second)
 
 # <a name="first">第一部分：命名规范  </a>
-# 命名规范
+# 命名规则
+- 介绍几个 CSS 方法论: http://bubkoo.com/2015/06/25/css-methodologies/
 
 # 常用命名
 转自：http://www.alloyteam.com/2011/10/css-on-team-naming/
