@@ -67,7 +67,7 @@ index.html
 ```
 这是以模块划分，组件化的概念的项目结构。同一个功能模块的相关文件都在一个文件夹内，一幕了然，职责清晰。这种结构可能对新手来说难理解一点，但随着对项目的熟悉，这种结构也会带来更大的工作效率。
 
-## <a name="beset">最佳实践、规范</a>
+## <a name="best">最佳实践、规范</a>
 请阅读：[Angular规范](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md#%E6%89%8B%E5%8A%A8%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5)
 ## <a name="optimize">优化</a>
 - ### 减少监控值的个数  
