@@ -89,7 +89,7 @@ index.html
     来替代
     <input type="text" ng-model="obj.prop">
     ```
-    
+
 - ### 使用track by 提升索引的性能
 
     在angular中，在数据变更时DOM也会相应的更新，所以，DOM和数据需要建立关联，即需要一个映射关系，映射关系需要唯一的索引，angular默认对简单类型使用自身当索引，当出现重复的时候，就会出错了。如果指定$index，也就是元素在数组中的下标为索引，就可以避免这个问题。
@@ -134,7 +134,13 @@ index.html
     </ul
     ```
 
-- ### 使用`ng-cloak`指令在angular启动完成之前隐藏不需要显示的html,避免闪烁。  
+- ### 使用`angular`已有的功能。
+    
+    比如：  
+    1. 可以不需要引入`jquery`, 因为`angular`已经内置了`jQLite`。
+    2. 熟悉内置的过滤器和指令，避免重复造轮子。
+
+- ### 使用`ng-cloak`/`ng-bind`指令来代替`{{}}`避免在页面初始化的时候闪烁。  
 
     ```html
      <div id="template1" ng-cloak>hello</div>
@@ -175,3 +181,11 @@ index.html
     她做的事情大致跟上面complie返回之后所有的link函数合成的的大的link函数差不多
     所以：在指令中compile与link选项是互斥的，如果同时设置了这两个选项，
     那么就会把compile所返回的函数当做是链接函数，而link选项本身就会被忽略掉
+
+- ### 保持业务逻辑与界面分离。
+
+    `ViewMode`(controller)应该总是专注于监听来自`view`(模板/directive)行为，然后调用相应的`Model`(service)中的方法。避免在`controller`中进行`DOM`的操作，而是应该根据`数据驱动`的模式，通过改变数据来更新`DOM`, 或者将复杂的DOM操作封装成指令。
+
+- ### 避免在`$rootScope`中添加函数、业务逻辑。
+    
+    公共，可复用的函数应该写成`service`。`$rootScope`应该用来保存共享的数据。
