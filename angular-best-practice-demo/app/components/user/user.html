@@ -1,0 +1,10 @@
+<h2>hello, {{ vm.name }} !</h2>
+<input type="text" ng-model="vm.newName">
+<button ng-click="vm.setName(vm.newName)">setName</button>
+<button ng-click="vm.showName(vm.name)">showName</button>
+<hr>
+<ul>
+	<li>{{vm.userinfo.username}}</li>
+	<li>{{vm.userinfo.age}}</li>
+	<li>{{vm.userinfo.sex}}</li>
+</ul>
